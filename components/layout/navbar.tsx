@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "../ui/theme-toggle";
 
 const menuItems = [
   { name: "Home", href: "#home" },
@@ -19,13 +20,10 @@ export default function Navbar() {
       <nav className="mx-auto mt-5 flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-8 py-4 backdrop-blur-xl">
 
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-3"
-        >
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo.png"
-            alt="Logo"
+            alt="Ekhtiar Logo"
             width={45}
             height={45}
             className="rounded-full"
@@ -42,13 +40,13 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Menu */}
+        {/* Desktop Menu */}
         <ul className="hidden items-center gap-8 md:flex">
           {menuItems.map((item) => (
             <li key={item.name}>
               <a
                 href={item.href}
-                className="text-sm font-medium text-slate-300 transition hover:text-blue-400"
+                className="text-sm font-medium text-slate-300 transition duration-300 hover:text-blue-400"
               >
                 {item.name}
               </a>
@@ -56,15 +54,21 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
-        <a
-          href="/cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-        >
-          Resume
-        </a>
+        {/* Right Side */}
+        <div className="flex items-center gap-4">
+
+          <ThemeToggle />
+
+          <a
+            href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-blue-700"
+          >
+            Resume
+          </a>
+
+        </div>
 
       </nav>
     </header>
