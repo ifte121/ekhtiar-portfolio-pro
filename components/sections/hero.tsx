@@ -1,104 +1,81 @@
-import Image from "next/image";
+"use client";
+
+import FadeIn from "../ui/fade-in";
 import Button from "../ui/button";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#050816]">
-      {/* Background Glow */}
-      <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-blue-600/20 blur-[150px]" />
-      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-purple-600/20 blur-[150px]" />
+    <FadeIn>
+      <section
+        id="home"
+        className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+      >
+        <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center justify-center gap-16 px-6 lg:flex-row">
+          {/* Left Content */}
+          <div>
 
-        {/* Left Side */}
-        <div className="max-w-2xl text-center lg:text-left">
+            <p className="uppercase tracking-[0.35em] text-blue-400">
+              Welcome to My Portfolio
+            </p>
 
-          <p className="mb-4 uppercase tracking-[0.35em] text-blue-400">
-            Welcome to My Portfolio
-          </p>
+            <h1 className="mt-6 text-5xl font-extrabold leading-tight text-white md:text-7xl">
+              Ekhtiar{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                Chowdhury
+              </span>
+            </h1>
 
-          <h1 className="text-5xl font-extrabold leading-tight text-white md:text-7xl">
-            Ekhtiar{" "}
-            <span className="text-blue-500">
-              Chowdhury
-            </span>
-          </h1>
+            <h2 className="mt-6 text-2xl text-slate-300 md:text-3xl">
+              Banker • Income Tax Consultant • YouTube Creator
+            </h2>
 
-          <h2 className="mt-6 text-2xl text-slate-300">
-            Banker • Income Tax Consultant • YouTube Creator
-          </h2>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-400">
+              Passionate about Digital Banking, Oracle FLEXCUBE,
+              Income Tax Consultancy and Financial Education.
+              I build banking solutions and simplify finance
+              through technology and educational content.
+            </p>
 
-          <p className="mt-8 max-w-xl text-lg leading-8 text-slate-400">
-            I help individuals and businesses with Banking,
-            Income Tax Consultancy, Oracle FLEXCUBE, Digital Banking
-            and Financial Education through professional consulting
-            and YouTube content.
-          </p>
+            <div className="mt-10 flex flex-wrap gap-5">
+              <Button>View Portfolio</Button>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
-            <Button>View Portfolio</Button>
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline">
+                  Download CV
+                </Button>
+              </a>
+            </div>
 
-            <Button variant="outline">
-              Contact Me
-            </Button>
           </div>
 
-          {/* Stats */}
+          {/* Right Image */}
+          <div className="flex justify-center">
 
-          <div className="mt-14 grid grid-cols-3 gap-8">
+            <div className="relative">
 
-            <div>
-              <h3 className="text-4xl font-bold text-blue-500">
-                6+
-              </h3>
+              <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl" />
 
-              <p className="mt-2 text-slate-400">
-                Years Experience
-              </p>
-            </div>
+              <Image
+                src="/profile.png"
+                alt="Ekhtiar Chowdhury"
+                width={420}
+                height={420}
+                priority
+                className="relative rounded-full border-4 border-blue-500 object-cover shadow-2xl"
+              />
 
-            <div>
-              <h3 className="text-4xl font-bold text-blue-500">
-                100+
-              </h3>
-
-              <p className="mt-2 text-slate-400">
-                Tax Files
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-4xl font-bold text-blue-500">
-                50+
-              </h3>
-
-              <p className="mt-2 text-slate-400">
-                Banking Projects
-              </p>
             </div>
 
           </div>
 
         </div>
-
-        {/* Right Side */}
-
-        <div className="relative">
-
-          <div className="absolute inset-0 rounded-[40px] bg-blue-600/30 blur-3xl" />
-
-          <Image
-            src="/profile.png"
-            alt="Ekhtiar Chowdhury"
-            width={420}
-            height={520}
-            priority
-            className="relative rounded-[40px] border border-white/10 object-cover shadow-2xl"
-          />
-
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </FadeIn>
   );
 }
