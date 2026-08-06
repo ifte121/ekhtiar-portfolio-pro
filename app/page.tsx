@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
 import BackgroundGlow from "@/components/ui/background-glow";
+import CustomCursor from "@/components/ui/custom-cursor";
 
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
@@ -17,25 +18,18 @@ export default function Home() {
   return (
     <>
       <BackgroundGlow />
+      <CustomCursor />
 
       <Navbar />
 
       <Hero />
-
       <About />
-
       <Experience />
-
       <Services />
-
       <Skills />
-
       <Projects />
-
       <Testimonials />
-
       <Certificates />
-
       <Contact />
 
       <Footer />
