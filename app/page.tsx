@@ -3,6 +3,7 @@ import Footer from "@/components/layout/footer";
 
 import BackgroundGlow from "@/components/ui/background-glow";
 import CustomCursor from "@/components/ui/custom-cursor";
+import ScrollProgress from "@/components/ui/scroll-progress";
 
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
@@ -17,6 +18,7 @@ import Contact from "@/components/sections/contact";
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <BackgroundGlow />
       <CustomCursor />
 
