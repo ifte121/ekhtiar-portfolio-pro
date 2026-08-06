@@ -1,75 +1,70 @@
 export default function About() {
+  const stats = [
+    { value: "6+", label: "Years Experience" },
+    { value: "100+", label: "Income Tax Files" },
+    { value: "50+", label: "Banking Projects" },
+    { value: "500K+", label: "YouTube Views" },
+  ];
+
   return (
     <section
       id="about"
-      className="mx-auto max-w-7xl px-6 py-28"
+      className="mx-auto max-w-7xl px-6 py-24"
     >
       <div className="grid gap-16 lg:grid-cols-2 items-center">
 
+        {/* Left */}
+
         <div>
-          <p className="text-blue-400 uppercase tracking-[0.3em]">
+
+          <p className="uppercase tracking-[0.3em] text-blue-400">
             About Me
           </p>
 
-          <h2 className="mt-5 text-4xl md:text-5xl font-bold text-white">
+          <h2 className="mt-5 text-5xl font-bold text-white leading-tight">
             Banking Professional &
-            <span className="text-blue-500"> Financial Consultant</span>
+            <span className="text-blue-500">
+              {" "}Financial Consultant
+            </span>
           </h2>
 
           <p className="mt-8 text-slate-400 leading-8">
-            I am currently working at United Commercial Bank PLC
-            with experience in Oracle FLEXCUBE, Digital Banking,
-            UAT, Banking Operations and Financial Technology.
+            I am currently working at United Commercial Bank PLC,
+            specializing in Oracle FLEXCUBE, Digital Banking,
+            Banking Operations, UAT Testing and Banking Technology.
           </p>
 
           <p className="mt-6 text-slate-400 leading-8">
-            Besides my banking career, I also work as an
-            Income Tax Consultant and create educational
-            content on YouTube to help people understand
-            banking and finance.
+            Alongside my banking career, I provide Income Tax
+            Consultancy services and create financial education
+            content through my YouTube channel, Smart Banking BD.
           </p>
+
         </div>
 
-        <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-10">
-          <div className="grid grid-cols-2 gap-6">
+        {/* Right */}
 
-            <div>
+        <div className="grid grid-cols-2 gap-6">
+
+          {stats.map((item) => (
+
+            <div
+              key={item.label}
+              className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition hover:-translate-y-2 hover:border-blue-500"
+            >
+
               <h3 className="text-5xl font-bold text-blue-500">
-                6+
+                {item.value}
               </h3>
-              <p className="mt-2 text-slate-400">
-                Years Experience
+
+              <p className="mt-3 text-slate-400">
+                {item.label}
               </p>
+
             </div>
 
-            <div>
-              <h3 className="text-5xl font-bold text-blue-500">
-                100+
-              </h3>
-              <p className="mt-2 text-slate-400">
-                Tax Files
-              </p>
-            </div>
+          ))}
 
-            <div>
-              <h3 className="text-5xl font-bold text-blue-500">
-                50+
-              </h3>
-              <p className="mt-2 text-slate-400">
-                Banking Projects
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-5xl font-bold text-blue-500">
-                YouTube
-              </h3>
-              <p className="mt-2 text-slate-400">
-                Financial Education
-              </p>
-            </div>
-
-          </div>
         </div>
 
       </div>
