@@ -1,12 +1,29 @@
 "use client";
 
 import FadeIn from "../ui/fade-in";
+import Counter from "../ui/counter";
 
 const stats = [
-  { value: "6+", label: "Years Experience" },
-  { value: "100+", label: "Income Tax Files" },
-  { value: "50+", label: "Banking Projects" },
-  { value: "500K+", label: "YouTube Views" },
+  {
+    end: 6,
+    suffix: "+",
+    label: "Years Experience",
+  },
+  {
+    end: 100,
+    suffix: "+",
+    label: "Income Tax Files",
+  },
+  {
+    end: 50,
+    suffix: "+",
+    label: "Banking Projects",
+  },
+  {
+    end: 500,
+    suffix: "K+",
+    label: "YouTube Views",
+  },
 ];
 
 export default function About() {
@@ -16,50 +33,41 @@ export default function About() {
         id="about"
         className="mx-auto max-w-7xl px-6 py-28"
       >
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="text-center">
+          <p className="uppercase tracking-[0.3em] text-blue-400">
+            About Me
+          </p>
 
-          <div>
-            <p className="uppercase tracking-[0.3em] text-blue-400">
-              About Me
-            </p>
+          <h2 className="mt-5 text-5xl font-bold text-white">
+            Professional Journey
+          </h2>
 
-            <h2 className="mt-5 text-5xl font-bold text-white leading-tight">
-              Banking Professional &
-              <span className="text-blue-500">
-                {" "}Financial Consultant
-              </span>
-            </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-slate-400 leading-8">
+            I work as a Banker at United Commercial Bank PLC,
+            specialize in Oracle FLEXCUBE, Digital Banking,
+            Income Tax Consultancy and create financial
+            education through Smart Banking BD.
+          </p>
+        </div>
 
-            <p className="mt-8 leading-8 text-slate-400">
-              I am currently working at United Commercial Bank PLC,
-              specializing in Oracle FLEXCUBE, Digital Banking,
-              Banking Operations, UAT Testing and Banking Technology.
-            </p>
+        <div className="mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((item) => (
+            <div
+              key={item.label}
+              className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-xl transition hover:-translate-y-2 hover:border-blue-500"
+            >
+              <h3 className="text-5xl font-bold text-blue-500">
+                <Counter
+                  end={item.end}
+                  suffix={item.suffix}
+                />
+              </h3>
 
-            <p className="mt-6 leading-8 text-slate-400">
-              Alongside my banking career, I provide Income Tax
-              Consultancy services and create financial education
-              content through Smart Banking BD.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-blue-500"
-              >
-                <h3 className="text-5xl font-bold text-blue-500">
-                  {item.value}
-                </h3>
-
-                <p className="mt-3 text-slate-400">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-
+              <p className="mt-4 text-slate-400">
+                {item.label}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </FadeIn>
