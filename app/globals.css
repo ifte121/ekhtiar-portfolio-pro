@@ -40,4 +40,10 @@ body {
   color: white;
 }body {
   cursor: none;
+}html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050816;
 }
