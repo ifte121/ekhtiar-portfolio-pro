@@ -8,6 +8,7 @@ import Services from "@/components/sections/services";
 import Skills from "@/components/sections/skills";
 import Projects from "@/components/sections/projects";
 import Testimonials from "@/components/sections/testimonials";
+import Certificates from "@/components/sections/certificates";
 import Contact from "@/components/sections/contact";
 
 export default function Home() {
@@ -28,6 +29,8 @@ export default function Home() {
       <Projects />
 
       <Testimonials />
+
+      <Certificates />
 
       <Contact />
 
