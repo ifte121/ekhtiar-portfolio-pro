@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import ThemeToggle from "../ui/theme-toggle";
 
 const menuItems = [
   { name: "Home", href: "#home" },
@@ -57,7 +56,6 @@ export default function Navbar() {
         {/* Right Side */}
         <div className="flex items-center gap-4">
 
-          <ThemeToggle />
 
           <a
             href="/cv.pdf"

@@ -15,6 +15,7 @@ import Testimonials from "@/components/sections/testimonials";
 import Certificates from "@/components/sections/certificates";
 import Contact from "@/components/sections/contact";
 import SocialDock from "@/components/ui/social-dock";
+import CV from "@/components/sections/cv";
 export default function Home() {
   return (
     <>
@@ -32,7 +33,6 @@ export default function Home() {
       <Projects />
       <Testimonials />
       <Certificates />
-      <Contact />
 <Contact />
 
 <SocialDock />

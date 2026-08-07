@@ -1,56 +1,99 @@
-"use client";
-
-import FadeIn from "../ui/fade-in";
-
 const skills = [
-  { name: "Oracle FLEXCUBE", level: 95 },
-  { name: "Digital Banking", level: 90 },
-  { name: "UAT Testing", level: 92 },
-  { name: "Income Tax", level: 94 },
-  { name: "Financial Consulting", level: 90 },
-  { name: "YouTube Content Creation", level: 88 },
+  {
+    name: "Oracle FLEXCUBE",
+    level: 95,
+  },
+  {
+    name: "Core Banking",
+    level: 92,
+  },
+  {
+    name: "UAT Testing",
+    level: 96,
+  },
+  {
+    name: "SQL",
+    level: 88,
+  },
+  {
+    name: "Income Tax Consultancy",
+    level: 94,
+  },
+  {
+    name: "Digital Banking",
+    level: 90,
+  },
+  {
+    name: "YouTube SEO",
+    level: 91,
+  },
+  {
+    name: "Content Creation",
+    level: 93,
+  },
 ];
 
 export default function Skills() {
   return (
-    <FadeIn>
-      <section
-        id="skills"
-        className="mx-auto max-w-7xl px-6 py-28"
-      >
-        <div className="text-center">
-          <p className="uppercase tracking-[0.3em] text-blue-400">
-            Skills
+    <section
+      id="skills"
+      className="relative bg-[#050816] py-28 px-6"
+    >
+      <div className="max-w-6xl mx-auto">
+
+        <div className="text-center mb-16">
+          <p className="uppercase tracking-[8px] text-blue-400">
+            SKILLS
           </p>
 
-          <h2 className="mt-5 text-5xl font-bold text-white">
+          <h2 className="mt-4 text-5xl font-bold text-white">
             Professional Skills
           </h2>
+
+          <p className="mt-5 text-gray-400">
+            My expertise in Banking, Finance and Technology.
+          </p>
         </div>
 
-        <div className="mt-20 space-y-8">
+        <div className="grid gap-8 md:grid-cols-2">
+
           {skills.map((skill) => (
-            <div key={skill.name}>
-              <div className="mb-3 flex justify-between">
-                <span className="font-semibold text-white">
+
+            <div
+              key={skill.name}
+              className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:border-blue-500"
+            >
+
+              <div className="mb-4 flex justify-between">
+
+                <h3 className="text-lg font-semibold text-white">
                   {skill.name}
-                </span>
+                </h3>
 
                 <span className="text-blue-400">
                   {skill.level}%
                 </span>
+
               </div>
 
-              <div className="h-3 overflow-hidden rounded-full bg-white/10">
+              <div className="h-3 overflow-hidden rounded-full bg-slate-800">
+
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
-                  style={{ width: `${skill.level}%` }}
+                  className="h-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 transition-all duration-1000"
+                  style={{
+                    width: `${skill.level}%`,
+                  }}
                 />
+
               </div>
+
             </div>
+
           ))}
+
         </div>
-      </section>
-    </FadeIn>
+
+      </div>
+    </section>
   );
 }
